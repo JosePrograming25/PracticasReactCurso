@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import Cuadro from './Cuadro'
 
-export default function TablaJuego ({ tamanio = 3, setTurno, turno, setGanador, nuevojuego }) {
+export default function TablaJuego ({ tamanio = 3, setTurno, turno, setGanador, nuevojuego, ganador }) {
   const [tablaJuego, setTablaJuego] = useState('')
 
   useEffect(() => {
@@ -9,11 +9,13 @@ export default function TablaJuego ({ tamanio = 3, setTurno, turno, setGanador, 
       // busca en el localstorage
       const localStoTabla = window.localStorage.getItem('tiktaktoe')
       const localStoTurno = window.localStorage.getItem('turno')
-      console.log('localeStorage', localStoTabla)
+      const localStoGanador = window.localStorage.getItem('ganador')
+      console.log(localStoGanador)
 
       if (localStoTabla && localStoTurno) {
         setTablaJuego(JSON.parse(localStoTabla))
         setTurno(JSON.parse(localStoTurno))
+        setGanador(JSON.parse(localStoGanador))
       } else {
         setTablaJuego(Array(tamanio * tamanio).fill(''))
       }
@@ -21,7 +23,7 @@ export default function TablaJuego ({ tamanio = 3, setTurno, turno, setGanador, 
     if (tablaJuego) {
       window.localStorage.setItem('tiktaktoe', JSON.stringify(tablaJuego))
       window.localStorage.setItem('turno', JSON.stringify(turno))
-
+      window.localStorage.setItem('ganador', JSON.stringify(ganador))
       if (!(tablaJuego.find(ele => ele === '') === '')) {
         setGanador('Empate')
       }

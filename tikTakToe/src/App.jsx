@@ -16,7 +16,7 @@ const App = () => {
   }
   return (
     <div className='flex justify-center items-center flex-col h-screen relative'>
-      <TablaJuego setTurno={cambiarTurno} turno={turno} setGanador={esGanador} nuevojuego={nuevoJuego} />
+      <TablaJuego setTurno={cambiarTurno} turno={turno} setGanador={esGanador} nuevojuego={nuevoJuego} ganador={ganador} />
       <Turno turno={turno} />
       {ganador && <Ganador ganador={ganador} setGanador={esGanador} setNuevoJuego={nuevoJueg} />}
 
