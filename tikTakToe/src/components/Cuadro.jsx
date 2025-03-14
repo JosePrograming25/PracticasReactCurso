@@ -2,15 +2,8 @@ import { comprobarCoincidencia } from '../util/hooks'
 
 export default function Tabla ({ contenido, identificador, setTablaJuego, setTurno, turno, tablaJuego, setGanador }) {
   const hayGanador = () => {
-    const ganaX = comprobarCoincidencia('❌', tablaJuego)
-    const ganaO = comprobarCoincidencia('⭕', tablaJuego)
-
-    if (ganaX) {
-      setGanador(ganaX)
-    }
-    if (ganaO) {
-      setGanador(ganaO)
-    }
+    const gana = comprobarCoincidencia(tablaJuego)
+    if (gana) setGanador(gana)
   }
 
   const usoTurno = () => {

@@ -1,68 +1,33 @@
-const comprobarCoincidencia = (i, arreglo) => {
-  const x = null
-  const coincidencias3 = [
-    [
-      i, i, i,
-      x, x, x,
-      x, x, x
-    ],
-    [
-      x, x, x,
-      i, i, i,
-      x, x, x
-    ],
-    [
-      x, x, x,
-      x, x, x,
-      i, i, i
-    ],
-    [
-      i, x, x,
-      i, x, x,
-      i, x, x
-    ],
-    [
-      x, i, x,
-      x, i, x,
-      x, i, x
-    ],
-    [
-      x, x, i,
-      x, x, i,
-      x, x, i
-    ],
-    [
-      i, x, x,
-      x, i, x,
-      x, x, i
-    ],
-    [
-      x, x, i,
-      x, i, x,
-      i, x, x
-    ]
+import { circulo, equis } from './constantes'
+
+const comprobarCoincidencia = (arreglo) => {
+  const coincidencias = [
+    // horizontales
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    // verticales
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    // diagonales
+    [0, 4, 8],
+    [6, 4, 2]
+
   ]
-  let iguales = 0
-  let hayGanador = null
-  if (arreglo.length === 9) {
-    coincidencias3.forEach(ele => {
-      ele.forEach((e, index) => {
-        if (e === arreglo[index]) {
-          iguales = iguales + 1
-          if (iguales === 3) {
-            console.log(e, iguales)
-            hayGanador = e
-            return e
-          }
-        }
-      })
-      if (iguales === 3) {
-        return hayGanador
-      }
-      iguales = 0
-    })
+
+  for (const [a, b, c] of coincidencias) {
+    if (
+      circulo === arreglo[a] &&
+      arreglo[a] === arreglo[b] &&
+      arreglo[b] === arreglo[c]
+    ) return arreglo[a]
+    if (
+      equis === arreglo[a] &&
+      arreglo[a] === arreglo[b] &&
+      arreglo[b] === arreglo[c]
+    ) return arreglo[a]
   }
-  return hayGanador
 }
 
 export {

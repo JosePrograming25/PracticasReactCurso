@@ -24,7 +24,7 @@ export default function TablaJuego ({ tamanio = 3, setTurno, turno, setGanador, 
       window.localStorage.setItem('tiktaktoe', JSON.stringify(tablaJuego))
       window.localStorage.setItem('turno', JSON.stringify(turno))
       window.localStorage.setItem('ganador', JSON.stringify(ganador))
-      if (!(tablaJuego.find(ele => ele === '') === '')) {
+      if (!(tablaJuego.find(ele => ele === '') === '') && !ganador) {
         setGanador('Empate')
       }
     }
