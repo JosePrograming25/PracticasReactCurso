@@ -1,0 +1,24 @@
+{
+  "name": "connect4",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "vite"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@vitejs/plugin-react-swc": "^3.8.0",
+    "standard": "^17.1.2",
+    "vite": "^6.2.2"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.0.14",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwindcss": "^4.0.14"
+  }
+}
