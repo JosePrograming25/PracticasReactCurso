@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+body {
+  background-color: #282C34;
+  color: azure;
+}
+
+@theme {
+  --color-objeto-predeterminado: #FFFFFF1F;
+  --color-jugador-rojo: #C9546F;
+  --color-jugador-verde: #89CA62;
+}

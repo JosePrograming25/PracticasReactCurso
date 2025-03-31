@@ -7,7 +7,7 @@ export default function OpcionesJuego ({ opcionTablero, cambioTablero, jugador, 
   return (
     <div className='flex flex-col items-center justify-center my-3'>
       <Label>Tipo de Tablero</Label>
-      <Select value={opcionTablero} onChange={cambioTablero}>
+      <Select value={opcionTablero[0]} onChange={cambioTablero}>
 
         <option value='7x8'>7x8 (Estandar)</option>
         <option value='6x7'>6x7 (Corta)</option>
@@ -18,12 +18,13 @@ export default function OpcionesJuego ({ opcionTablero, cambioTablero, jugador, 
       <div className='flex justify-between gap-2'>
         <div className='flex flex-col items-center'>
           <Label className='text-base'>Jugador 1</Label>
-          <Circulo color={jugador[0]} className='w-10 h-10' />
+          <Circulo className={`w-10 h-10 text-jugador-${jugador[0]} `} />
         </div>
         <div><Boton onClick={cambioJugar} className='text-2xl cursor-pointer relative top-7'>🔁</Boton></div>
         <div className='flex flex-col items-center'>
           <Label className='text-base'>Jugador 2</Label>
-          <Circulo color={jugador[1]} className='w-10 h-10' />
+          <Circulo className={`w-10 h-10 text-jugador-${jugador[1]} `} />
+
         </div>
       </div>
 
