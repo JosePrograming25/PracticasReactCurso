@@ -2,7 +2,7 @@ import Header from './Components/Header'
 import Main from './Components/Main'
 import useMovies from './hooks/useMovies'
 import useInputSearch from './hooks/useInputSearch'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import actualizarEstado from './services/actualizarEstado'
 
 function usePage () {
